@@ -1,0 +1,6 @@
+---
+- hosts: localhost
+  become: yes
+  tasks:
+   - name: Include tasks from common.yml to site.yml
+     include: common.yml
