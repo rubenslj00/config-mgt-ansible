@@ -1,35 +1,9 @@
 ---
 
-      - name: Update all packages to the latest version
-        apt:
-           upgrade: dist
+- hosts: lacolhost
+  become: yes
+   tasks:
+    - include: common.yml 
 
-      - name: Upgrade all packages to the last version
-        apt: 
-          name: "*"
-          state: latest
-
-                
-
-      - name: Changing timezone to America/Los_Angeles for the nfs server
-        timezone:
-          name: America/Los_Angeles
-
-      - name: install a list of  packages 
-        apt:
-          pkg:
-          - ntp
-          - nfs-common
-          - php-mysqli
-          - apache2
-
-
-      - name: create a common directory
-        file:
-            path: /home/best/common
-            state: directory
-
-      - name: create a common/ubuntu file on all nodes
-        file:
-            path: /home/best/common/ubuntu    
-            state: touch                                                                                           
+- name: import assignments playbook
+  import_playbook: /home/tola/repo-clone/config-mgt-ansible/assignments/webservers.yml
