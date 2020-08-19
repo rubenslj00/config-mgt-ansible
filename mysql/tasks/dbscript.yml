@@ -1,0 +1,11 @@
+--- 
+
+- name: copy dbscript.j2 in tasks folder
+  template:
+   src: dbscript.j2
+   dest: /root/config-mgt-ansibles/roles/mysql/tasks/dbscript.sql
+   owner: root
+   group: root
+   mode: 0777
+  delegate_to: localhost 
+

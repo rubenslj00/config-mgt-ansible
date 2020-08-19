@@ -22,6 +22,7 @@
           - nfs-common
           - php-mysqli
           - apache2
+          - php7.2
 
 
       - name: create a common directory
