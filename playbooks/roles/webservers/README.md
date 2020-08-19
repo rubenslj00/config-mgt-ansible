@@ -1,7 +1,7 @@
 Role Name
 =========
 
-A brief description of the role goes here.
+is to install and configure apache via tooling from github.
 
 Requirements
 ------------
