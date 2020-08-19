@@ -1,0 +1,9 @@
+--- 
+
+
+
+- hosts: nfsserver
+  become: true
+  roles:
+   - nfs-server
+© 2020 GitHub, Inc.
