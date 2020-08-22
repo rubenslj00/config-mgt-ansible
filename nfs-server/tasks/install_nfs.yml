@@ -1,0 +1,9 @@
+---
+
+
+
+- name: installing nfs-kernel-server package 
+  apt:
+   name: nfs-kernel-server
+   state: latest
+  

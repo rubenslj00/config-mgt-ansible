@@ -2,7 +2,7 @@
 ---
 
 
-   - name: install webserver {{ apache_package }} on debian servers
+   - name: install webserver servers
      package:
       name: "{{ apache_package }}"
       state: present

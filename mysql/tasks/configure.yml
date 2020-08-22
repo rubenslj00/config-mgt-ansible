@@ -22,7 +22,7 @@
     owner: root
     group: root
     mode: 0755
-  when: mysql_config_include_files | length
+    # when: mysql_config_include_files | length
 
 - name: Copy my.cnf override files into include directory.
   template:
@@ -40,7 +40,7 @@
   args:
     creates: "{{ mysql_slow_query_log_file }}"
     warn: false
-  when: mysql_slow_query_log_enabled
+    #when: mysql_slow_query_log_enabled
 
 - name: Create datadir if it does not exist
   file:
@@ -58,17 +58,17 @@
     owner: mysql
     group: "{{ mysql_log_file_group }}"
     mode: 0640
-  when: mysql_slow_query_log_enabled
+    #when: mysql_slow_query_log_enabled
 
 - name: Create error log file (if configured).
   command: "touch {{ mysql_log_error }}"
   args:
     creates: "{{ mysql_log_error }}"
     warn: false
-  when:
-    - mysql_log | default(true)
-    - mysql_log_error | default(false)
-  tags: ['skip_ansible_galaxy']
+    #when:
+    #- mysql_log | default(true)
+    #- mysql_log_error | default(false)
+    #tags: ['skip_ansible_galaxy']
 
 - name: Set ownership on error log file (if configured).
   file:
@@ -77,10 +77,10 @@
     owner: mysql
     group: "{{ mysql_log_file_group }}"
     mode: 0640
-  when:
-    - mysql_log | default(true)
-    - mysql_log_error | default(false)
-  tags: ['skip_ansible_galaxy']
+    # when:
+    #- mysql_log | default(true)
+    #- mysql_log_error | default(false)
+    #tags: ['skip_ansible_galaxy']
 
 - name: Ensure MySQL is started and enabled on boot.
   service: "name={{ mysql_daemon }} state=started enabled={{ mysql_enabled_on_startup }}"

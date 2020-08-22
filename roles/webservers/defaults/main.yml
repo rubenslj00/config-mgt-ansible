@@ -1,0 +1,6 @@
+--- 
+
+tooling_db_username: "ruben" 
+tooling_db_password: "ruben" 
+tooling_db_ip: "10.0.0.132" 
+tooling_db_name: "rubendb"

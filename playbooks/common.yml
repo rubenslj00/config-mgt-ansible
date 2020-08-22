@@ -22,9 +22,8 @@
           - nfs-common
           - php-mysqli
           - apache2
-          - php7.2
-
-
+          - git
+       
       - name: create a common directory
         file:
             path: /home/best/common
